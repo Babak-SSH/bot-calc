@@ -8,7 +8,7 @@ import time
 import sympy
 
 #this part is for server settings 
-proxy_url = "http://proxy.server:3128"
+proxy_url = "SERVER:PORT" #your proxy server
 telepot.api._pools = {'default': urllib3.ProxyManager(proxy_url=proxy_url, num_pools=3, maxsize=10, retries=False, timeout=30),}
 telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
 
@@ -23,7 +23,7 @@ def listener(messages):
             print(m.text) # prints the sent message to the console
 
 
-bot = telebot.TeleBot('623371599:AAEcUWrZnwnDtNmofVMu0ISCY2wxMWv3OXY') #your <TOKEN> goes here
+bot = telebot.TeleBot('<TOKEN>') #your <TOKEN> goes here
 bot.set_update_listener(listener)  # register listener
 
 

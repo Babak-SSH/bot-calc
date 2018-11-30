@@ -1,10 +1,3 @@
-def main():
-    while(True):
-        exp = input()
-        exp = calculate(exp)        
-        print(exp)
-
-
 def calculate(exp):#they are in order
     while ('!' in exp):
         cord = exp.index('!')
@@ -60,7 +53,3 @@ def fac(num):#factoriel algorithm written with recursion
         return 1
     else:
         return num * fac(num-1)
-
-
-if __name__ == "__main__":
-    main()
